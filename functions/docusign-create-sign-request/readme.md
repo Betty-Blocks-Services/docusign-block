@@ -89,8 +89,8 @@ Find it [here](../../templates/docusign_template.docx)
 
 17. Configure the sub action to run `[DS] Refresh Access Token` which you have setup in [Docusign - Refresh Access Token > How to use > Actio Setup]
 
-    > [!TIP]
-    > Using a `Sub Action` speeds up your development process because you don't have to reconfigure certain options/steps each time.
+> [!TIP]
+> Using a `Sub Action` speeds up your development process because you don't have to reconfigure certain options/steps each time.
 
 18. If you've configured `[DS] Refresh Access Token` correctly, it should allow you to fill in the `RESULT AS` option. Name it `access_token`.
 

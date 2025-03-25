@@ -28,13 +28,13 @@ Summary: Provides an example setup of how to use this step and redirect the user
 
 1. Create a new page or use an existing one.
 
-   > [!IMPORTANT]
-   > It is required that the page is protected with an `Authentication Profile`.
+> [!IMPORTANT]
+> It is required that the page is protected with an `Authentication Profile`.
 
 2. Insert an `Action Button` in the desired location.
 
-   > [!NOTE]
-   > You can also use a form but you generally need no user input for this action.
+> [!NOTE]
+> You can also use a form but you generally need no user input for this action.
 
 3. Select the newly created `Action Button`.
 
@@ -56,9 +56,9 @@ Summary: Use this step to return the authentication URL to the user.
 
 2. Give the action an appropriate name. Example: `{{PAGE_NAME_PREFIX}} - Login to Docusign`.
 
-   > [!NOTE]
-   > It is generally a good practice to include the name of the page where this button is used.
-   > This helps you organize so that you are able to find your actions faster.
+> [!NOTE]
+> It is generally a good practice to include the name of the page where this button is used.
+> This helps you organize so that you are able to find your actions faster.
 
 3. Click `Save`.
 

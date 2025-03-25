@@ -60,8 +60,8 @@ Summary: Setting up a callback page to extract the access code and submit it in 
 
 9. Configure the hidden input as `Non-property-based` and click `Save`.
 
-   > [!NOTE]
-   > Leave the `ACTION INPUT VARIABLE (NUMBER)` field empty. We will create a `text` property in the next step.
+> [!NOTE]
+> Leave the `ACTION INPUT VARIABLE (NUMBER)` field empty. We will create a `text` property in the next step.
 
 10. Select the hidden input and press the `Select action input variable`-button.
 
@@ -93,8 +93,8 @@ Summary: Setup the action to validate the code and use it to gain an access toke
 
 7. Insert a condition to validate if the code exists (required).
 
-   > [!NOTE]
-   > If the code does not exist, you can use the Raise Error step to give the user information about what went wrong. (optional)
+> [!NOTE]
+> If the code does not exist, you can use the Raise Error step to give the user information about what went wrong. (optional)
 
 8. Insert the step `DocuSign - Get Access Token`.
 
