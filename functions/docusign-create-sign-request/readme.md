@@ -132,6 +132,8 @@ If you want to receive update's on when the user has signed the document, you mu
 > [!NOTE]
 > This is a very basic implementation of an API endpoint.
 > Securing the endpoint and parsing the request can be done however you like.
+>
+> Also, it might take a while for DocuSign to send the request after the request is completed
 
 1. Create a new action and name it `[API][DS] Sign Request Callback`
 
@@ -141,12 +143,20 @@ If you want to receive update's on when the user has signed the document, you mu
 
 4. Add a new `Action Variable` named `body` and make it `Text`.
 
-5. Parse the request however you like with `JSONPath`.
+5. Add a new `Action Variable` named `status`, make it a `Number` and set the default value to `200`.
 
-6. Insert `Format Endpoint Result` at the end of your step.
+6. Parse the request however you like with `JSONPath`.
 
-7. Configure `BODY` to the action variable `body` and the `STATUS CODE` to `200`.
+> [!TIP]
+> Check this [example JSON](./callback_response_example.json) for each available key in the callback request
+>
+> Create a `Schema Model` with the desired properties and assign this Schema Model in the JSONPath
+> ![JSONPath with Schema Model](../../public/json_path_callback_schema_model.jpg)
 
-8. Define `RESULT` as `result`.
+7. Insert `Format Endpoint Result` at the end of your step.
 
-9. Select the `Finish`-step and choose `result` as the `OUTPUT VARIABLE`
+8. Configure `BODY` to the action variable `body` and the `STATUS CODE` to the action variable `status`.
+
+9. Define `RESULT` as `result`.
+
+10. Select the `Finish`-step and choose `result` as the `OUTPUT VARIABLE`
