@@ -1,0 +1,154 @@
+{
+  "description": "Description",
+  "label": "DocuSign - Get Access Token",
+  "category": "DocuSign",
+  "icon": {
+    "name": "KeyIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "url",
+      "label": "Token URL",
+      "info": "DocuSign Token URL (See: https://developers.docusign.com/docs/web-forms-api/web-forms-101/endpoint-base-path/)",
+      "meta": {
+        "type": "Text",
+        "placeholder": "https://account-d.docusign.com/oauth/token",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "integrationKey",
+      "label": "DocuSign Integration Key",
+      "info": "This key can be found in your DocuSign developer dashboard at Apps & Keys (See: https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=pmp1583277397015.html&_LANG=enus)",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "integrationSecret",
+      "label": "DocuSign Integration Secret",
+      "info": "The integration secret for your app (See: https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=lzz1583277395470.html&_LANG=enus)",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "scopes",
+      "label": "Scopes",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "Please provide a comma sepparated list of authentication scopes (see more at: https://developers.docusign.com/platform/auth/reference/scopes/)"
+    },
+    {
+      "info": "Sometimes you may need to pass some additional information in your request, this is possible by adding variables in your header.",
+      "label": "Headers",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "headers"
+    },
+    {
+      "info": "Body parameters as key-value pairs. You'd atleast need a 'grant_type', and depending on the desired flow, an 'assertion' to enter the JWT.",
+      "label": "Body Parameters, e.g. grant_type & assertion",
+      "meta": {
+        "type": "Map"
+      },
+      "name": "body"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "accessToken",
+      "label": "Access Token as",
+      "info": "The name of the variable that will contain the resulting access token",
+
+      "configuration": {
+        "placeholder": "access_token"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "refreshToken",
+      "label": "Refresh Token as",
+      "info": "The name of the variable that will contain the resulting refresh token",
+
+      "configuration": {
+        "placeholder": "refresh_token"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        },
+        "validations": {
+          "required": true
+        }
+      },
+      "name": "expiresAt",
+      "label": "Expires at date",
+      "info": "The name of the variable that will contain the resulting token expiry date (ISO-8601 format)",
+      "configuration": {
+        "placeholder": "expires_at"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "tokenType",
+      "label": "Token type as",
+      "info": "The name of the variable that will contain the resulting token type (optional)",
+      "configuration": {
+        "placeholder": "token_type"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "scope",
+      "label": "Scope name as",
+      "info": "The name of the variable that will contain the resulting scope (optional)",
+      "configuration": {
+        "placeholder": "access_token_scope"
+      }
+    },
+    {
+      "name": "logging",
+      "label": "Debug logging",
+      "info": "Enable to turn on debug logging for this step",
+      "meta": {
+        "type": "Boolean"
+      },
+      "advanced": true
+    }
+  ],
+  "yields": "NONE"
+}

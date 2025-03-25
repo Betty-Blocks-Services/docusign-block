@@ -1,0 +1,134 @@
+{
+  "description": "This step can create a simple sign request for either one or two signers. If your use case needs a more comprehensive envelope with more documents or signers you can create a custom envelope following DocuSign's documentation and different action steps.",
+  "label": "DocuSign - Create Sign Request",
+  "category": "DocuSign",
+  "icon": {
+    "name": "FileSignedIcon",
+    "color": "Green"
+  },
+  "options": [
+    {
+      "name": "baseURL",
+      "label": "Base URL",
+      "info": "The base URL of your API integration with DocuSign. (See more: https://developers.docusign.com/platform/api-endpoint-base-paths/)",
+      "meta": {
+        "type": "Text",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "accountID",
+      "label": "Account ID",
+      "info": "The (DocuSign) ID associated with the account that makes the request",
+      "meta": {
+        "type": "Text",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "label": "Document to be signed",
+      "name": "document",
+      "info": "The document that needs to be signed. Can be either a DOCX or PDF but it has to include the correct anchor tabs. For more information refer to the documentation.",
+      "meta": {
+        "type": "Value",
+        "allowedKinds": ["FILE"],
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "signerCollection",
+      "label": "Signer Collection",
+      "info": "The collection of people who need to sign this document. TIP: If you only need 1 signer you can also set the limit of the collection to 1",
+      "meta": {
+        "type": "Collection",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "firstNameProperty",
+      "label": "First name property (optional)",
+      "info": "Required if you've provided a \"Last Name Property\". Can be used to autofill the document (See: INSERT_GITHUB_DOC)",
+      "meta": {
+        "type": "Property",
+        "model": "signerCollection"
+      }
+    },
+    {
+      "name": "lastNameProperty",
+      "label": "Last name property (optional)",
+      "info": "Required if you've provided a \"First Name Property\". Can be used to autofill the document (See: INSERT_GITHUB_DOC).",
+      "meta": {
+        "type": "Property",
+        "model": "signerCollection"
+      }
+    },
+    {
+      "name": "fullNameProperty",
+      "label": "Full name Property",
+      "info": "Can be used to autofill the document (See: INSERT_GITHUB_DOC)",
+      "meta": {
+        "type": "Property",
+        "model": "signerCollection",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "emailProperty",
+      "label": "Email Address Property",
+      "info": "Is used to as the recipient's email and can also be used to autofill the document (See: INSERT_GITHUB_DOC)",
+      "meta": {
+        "type": "Property",
+        "model": "signerCollection",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "routingOrderProperty",
+      "label": "Routing Order Property",
+      "info": "By default, this will use the order of the collection (See: https://developers.docusign.com/docs/esign-rest-api/reference/envelopes/enveloperecipients/#signer-recipient)",
+      "meta": {
+        "type": "Property",
+        "model": "signerCollection"
+      }
+    },
+    {
+      "label": "Callback URL",
+      "name": "callbackUrl",
+      "info": "The Callback URL (BB Action) to which DocuSign will send a request after the document has been signed (See more: https://developers.docusign.com/docs/esign-rest-api/reference/connect/)",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "label": "Access token",
+      "name": "accessToken",
+      "info": "The Access Token is used for authenticating with DocuSign and also determines the sender of the sign request.",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "label": "Envelope UUID as",
+      "info": "A Signature Request in DocuSign is called an Envelope. Once created, the Envelope ID can be used to request updates on the signature(s).",
+      "name": "envelope_id"
+    },
+    {
+      "name": "logging",
+      "label": "Logging",
+      "meta": { "type": "Boolean" },
+      "advanced": true
+    }
+  ],
+  "yields": "NONE"
+}

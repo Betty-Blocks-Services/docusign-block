@@ -1,0 +1,123 @@
+{
+  "description": "Validates the given \"Expires At\" date.",
+  "label": "DocuSign - Refresh Access Token",
+  "category": "DocuSign",
+  "icon": {
+    "name": "KeyIcon",
+    "color": "Blue"
+  },
+  "options": [
+    {
+      "name": "url",
+      "label": "Token URL",
+      "info": "DocuSign Token URL (See: https://developers.docusign.com/docs/web-forms-api/web-forms-101/endpoint-base-path/)",
+      "meta": {
+        "type": "Text",
+        "placeholder": "https://account-d.docusign.com/oauth/token",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "integrationKey",
+      "label": "DocuSign Integration Key",
+      "info": "This key can be found in your DocuSign developer dashboard at Apps & Keys (See: https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=pmp1583277397015.html&_LANG=enus)",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "integrationSecret",
+      "label": "DocuSign Integration Secret",
+      "info": "The integration secret for your app (See: https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=lzz1583277395470.html&_LANG=enus)",
+      "meta": {
+        "type": "Text"
+      }
+    },
+    {
+      "name": "accessTokenInput",
+      "label": "Access Token",
+      "meta": { "type": "Text", "validations": { "required": true } },
+      "info": "The \"Access Token\" you have received after executing: DocuSign - Get Access Token"
+    },
+    {
+      "name": "refreshTokenInput",
+      "label": "Refresh Token",
+      "meta": {
+        "type": "Text",
+        "validations": { "required": true }
+      },
+      "info": "The \"Refresh Token\" you have received after executing: DocuSign - Get Access Token"
+    },
+    {
+      "name": "expiresAtInput",
+      "label": "Access Token Expires At",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "The date at which the \"Access Token\" expires"
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "accessToken",
+      "label": "Access Token as",
+      "info": "The name for the variable that will contain the returning \"Access Token\"",
+
+      "configuration": {
+        "placeholder": "access_token"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "refreshToken",
+      "label": "Refresh Token as",
+      "info": "The name for the variable that will contain the returning \"Refresh Token\"",
+
+      "configuration": {
+        "placeholder": "refresh_token"
+      }
+    },
+    {
+      "meta": {
+        "type": "Output",
+        "validations": {
+          "required": true
+        },
+        "output": {
+          "type": "Text"
+        }
+      },
+      "name": "expiresAt",
+      "label": "Expires At as",
+      "info": "The name for the variable that will contain the returning \"Expires At\" date",
+
+      "configuration": {
+        "placeholder": "expires_at"
+      }
+    },
+    {
+      "name": "logging",
+      "label": "Debug Logging",
+      "meta": { "type": "Boolean" },
+      "advanced": true
+    }
+  ],
+  "yields": "NONE"
+}

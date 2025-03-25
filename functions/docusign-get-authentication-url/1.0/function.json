@@ -1,0 +1,91 @@
+{
+  "description": "Returns a URL to authorize requests based on the provided Authorization Method (https://developers.docusign.com/platform/auth/)",
+  "label": "DocuSign - Get Authentication URL",
+  "category": "DocuSign",
+  "icon": {
+    "name": "ActionsIcon",
+    "color": "Orange"
+  },
+  "options": [
+    {
+      "name": "method",
+      "label": "Authentication method",
+      "meta": {
+        "type": "Select",
+        "values": [
+          { "label": "Confidential Grant", "value": "confidential" },
+          { "label": "Public", "value": "public" },
+          { "label": "Implicit", "value": "implicit" },
+          { "label": "JWT", "value": "jwt" }
+        ],
+        "validations": {
+          "required": true
+        },
+        "default": "confidential"
+      },
+
+      "info": "The authentication strategy to use (See more: https://developers.docusign.com/platform/auth/)"
+    },
+    {
+      "label": "Authorization Url",
+      "configuration": {
+        "placeholder": "https://account-d.docusign.com/oauth/auth"
+      },
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      },
+      "info": "The DocuSign Authorization URL configuration (See: https://developers.docusign.com/platform/auth/confidential-authcode-get-token/)",
+      "name": "url"
+    },
+    {
+      "name": "scope",
+      "label": "Scope",
+      "meta": { "validations": { "required": true }, "type": "Text" },
+      "info": "The authentication scope (See more: https://developers.docusign.com/platform/auth/reference/scopes/)"
+    },
+    {
+      "name": "clientID",
+      "label": "Integration Key",
+      "meta": { "type": "Text", "validations": { "required": true } },
+      "info": "Your Integration Key can be found in your Developer Dashboard at Docusign: https://apps-d.docusign.com/admin/apps-and-keys"
+    },
+    {
+      "name": "redirectURI",
+      "label": "Redirect URI",
+      "meta": { "type": "Text", "validations": { "required": true } },
+      "info": "The redirect URL which you have specified for your application in DocuSign: https://apps-d.docusign.com/admin/apps-and-keys"
+    },
+    {
+      "name": "state",
+      "label": "State",
+      "meta": { "type": "Text" },
+      "info": "An optional state value that you can use to prevent CSRF and replay attacks (See more: https://auth0.com/docs/secure/attack-protection/state-parameters)"
+    },
+    {
+      "name": "loginHint",
+      "label": "Login Hint",
+      "meta": { "type": "Text" },
+      "info": "An optional login_hint that enables you to prepopulate the email address field on the sign-in screen."
+    },
+    {
+      "name": "result",
+      "label": "Result",
+      "meta": {
+        "type": "Output",
+        "output": { "type": "Text" },
+        "validations": { "required": true }
+      },
+      "info": "The authentication URL to redirect the user to"
+    },
+    {
+      "name": "logging",
+      "label": "Debug Logging",
+      "meta": { "type": "Boolean" },
+      "advanced": true
+    }
+  ],
+  "yields": "NONE"
+}
