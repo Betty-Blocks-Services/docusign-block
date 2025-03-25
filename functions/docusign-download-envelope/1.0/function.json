@@ -1,11 +1,132 @@
 {
-  "description": "Description",
-  "label": "DocuSign - Download Envelope",
+  "description": "Download file(s) from a DocuSign Envelope to save it in Betty Blocks",
+  "label": "DocuSign - Download Envelope File(s)",
   "category": "DocuSign",
   "icon": {
-    "name": "ActionsIcon",
+    "name": "FileSignedIcon",
     "color": "Orange"
   },
-  "options": [],
+  "options": [
+    {
+      "name": "baseURL",
+      "label": "Base URL",
+      "info": "The base URL of your API integration with DocuSign. (See more: https://developers.docusign.com/platform/api-endpoint-base-paths/)",
+      "meta": {
+        "type": "Text",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "name": "accountID",
+      "label": "Account ID",
+      "info": "The (DocuSign) ID associated with the account that makes the request",
+      "meta": {
+        "type": "Text",
+        "validations": { "required": true }
+      }
+    },
+    {
+      "label": "Access token",
+      "name": "accessToken",
+      "info": "The Access Token is used for authenticating with DocuSign and also determines the sender of the sign request.",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "envelopeId",
+      "label": "Envelope UUID e.g. 64589d5e-8d57-44f0-bc1a-48b0ec71f9b6",
+      "info": "This UUID is returned after a successful sign request with \"DocuSign - Create Sign Request\"",
+      "meta": {
+        "type": "Text",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "meta": {
+        "type": "Select",
+        "validations": {
+          "required": true
+        },
+        "values": [
+          { "label": "All documents as one PDF", "value": "combined" },
+          {
+            "label": "A ZIP archive that contains all of the documents and the certificate of completion.",
+            "value": "archive"
+          },
+          {
+            "label": "Only the Certificate of Completion as a PDF",
+            "value": "certificate"
+          },
+          {
+            "label": "One specific document in the envelope",
+            "value": "specificDoc"
+          }
+        ]
+      },
+      "name": "downloadType",
+      "label": "Which file(s) do you want to fetch from DocuSign?",
+      "info": "Retrieves all of the documents as a single PDF file OR Retrieves a ZIP archive that contains all of the PDF documents and the certificate of completion OR Retrieves only the certificate of completion as a PDF file OR Retrieves the envelope documents as a PDF portfolio OR Get one specific document by it's ID"
+    },
+    {
+      "label": "Document ID, e.g. 22",
+      "meta": {
+        "type": "Text"
+      },
+      "info": "Only applies when you want to download 1 specific Envelope Document",
+      "name": "documentId"
+    },
+    {
+      "name": "model",
+      "label": "Model",
+      "info": "The model in which to store the file",
+      "meta": {
+        "type": "Model",
+        "validations": {
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "property",
+      "label": "Property",
+      "info": "The property in which to actually save the file",
+      "meta": {
+        "allowedKinds": ["FILE", "IMAGE"],
+        "type": "Property",
+        "model": "model",
+        "validations": {
+          "required": true
+        }
+      },
+      "configuration": {
+        "dependsOn": [
+          {
+            "option": "model",
+            "action": "CLEAR"
+          }
+        ]
+      }
+    },
+    {
+      "name": "fileRef",
+      "label": "Downloaded file as",
+      "meta": {
+        "type": "Output",
+        "output": {
+          "type": "Text"
+        }
+      },
+      "info": "Contains the reference to the file which can be saved by assigning it to the corresponding file property",
+      "configuration": {
+        "placeholder": "DocusignFile"
+      }
+    }
+  ],
   "yields": "NONE"
 }
