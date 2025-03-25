@@ -39,8 +39,8 @@ The `WebUser` model will be required to store the user's DocuSign tokens.
 
 1. Create a new model named `WebUser` if it does not exist yet.
 
-   > [!TIP]
-   > You can use the Page template `User, account login and register` to automatically create the `WebUser` model.
+> [!TIP]
+> You can use the Page template `User, account login and register` to automatically create the `WebUser` model.
 
 #### DocuSign Tokens
 
@@ -61,10 +61,10 @@ The `WebUser` model will be required to store the user's DocuSign tokens.
    | Refresh Token | Text (multi line)  |
    | Expires at    | Text (single line) |
 
-   > [!NOTE]
-   > You can optionally add the `Scopes: text (single line)` property to store the scopes for each user individually.
-   >
-   > This setup mainly focusses on using the same scopes for every user.
+> [!NOTE]
+> You can optionally add the `Scopes: text (single line)` property to store the scopes for each user individually.
+>
+> This setup mainly focusses on using the same scopes for every user.
 
 3. Open the `Relations`-tab for the `DocuSign Tokens`-model.
 
