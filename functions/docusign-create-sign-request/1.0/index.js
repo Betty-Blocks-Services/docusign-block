@@ -2,6 +2,7 @@ import {
   arrayBufferToBase64,
   createEventNotification,
   createSignerJSON,
+  generateBearerHeader,
   Logger,
   parseCollection,
   parseProperty,
@@ -180,9 +181,7 @@ const DocuSignCreateSignatureRequest = async ({
 
     envelopeForLog = undefined; // Clear memory
 
-    const bearerToken = accessToken.startsWith("Bearer ")
-      ? accessToken
-      : `Bearer ${accessToken}`;
+    const authorizationHeader = generateBearerHeader(accessToken);
 
     const envelopesURL = `${baseURL}/restapi/v2.1/accounts/${accountID}/envelopes`;
 
@@ -192,7 +191,7 @@ const DocuSignCreateSignatureRequest = async ({
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: bearerToken,
+        ...authorizationHeader,
       },
       body: JSON.stringify(envelopeJson),
     });

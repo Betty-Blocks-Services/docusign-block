@@ -38,6 +38,23 @@ function objectToQueryString(params) {
     .join("&");
 }
 
+/**
+ * Returns an Authorization header with the provided token
+ * @param {string} token
+ * @returns {Object} - Authorization Header
+ *
+ * @example
+ * generateBearerHeader("token")
+ * // result { Authorization: "Bearer token"}
+ */
+function generateBearerHeader(token) {
+  return {
+    Authorization: accessToken.startsWith("Bearer ")
+      ? accessToken
+      : `Bearer ${accessToken}`,
+  };
+}
+
 // Export your utility functions here
 export {
   arrayBufferToBase64,
@@ -50,6 +67,7 @@ export {
   createAnchorTabsJson,
   generateAuthenticationRequestOption,
   generateBasicAuthHeader,
+  generateBearerHeader,
   generateCodeChallenge,
   Logger,
   objectToQueryString,
