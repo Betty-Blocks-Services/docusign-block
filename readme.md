@@ -96,9 +96,6 @@ This also enables you to easily link multiple documents to a single record.
 >
 > Read [Roles and Permissions explained](https://docs.bettyblocks.com/roles-and-permissions-explained) for more information on setting up roles.
 
-1. Click the tools icon on the bottom right and navigate to `Roles & Permissions`:
-   ![Tools > Roles & Permissions](./public/tools_roles_permissions.jpg)
-
 #### DocuSign Tokens (required)
 
 1. Choose on of the roles in your application.
