@@ -38,8 +38,8 @@
     },
     {
       "name": "envelopeId",
-      "label": "Envelope UUID e.g. 64589d5e-8d57-44f0-bc1a-48b0ec71f9b6",
-      "info": "This UUID is returned after a successful sign request with \"DocuSign - Create Sign Request\"",
+      "label": "Envelope ID",
+      "info": "This ID is returned after a successful sign request with \"DocuSign - Create Sign Request\"",
       "meta": {
         "type": "Text",
         "validations": {
@@ -48,6 +48,9 @@
       }
     },
     {
+      "name": "downloadType",
+      "label": "File(s) to download?",
+      "info": "Retrieves all of the documents as a single PDF file OR Retrieves a ZIP archive that contains all of the PDF documents and the certificate of completion \r\nOR Retrieves only the certificate of completion as a PDF file OR Retrieves the envelope documents as a PDF portfolio OR Get one specific document by it's ID",
       "meta": {
         "type": "Select",
         "validations": {
@@ -68,18 +71,15 @@
             "value": "specificDoc"
           }
         ]
-      },
-      "name": "downloadType",
-      "label": "Which file(s) do you want to fetch from DocuSign?",
-      "info": "Retrieves all of the documents as a single PDF file OR Retrieves a ZIP archive that contains all of the PDF documents and the certificate of completion OR Retrieves only the certificate of completion as a PDF file OR Retrieves the envelope documents as a PDF portfolio OR Get one specific document by it's ID"
+      }
     },
     {
+      "name": "documentId",
       "label": "Document ID, e.g. 22",
+      "info": "Only applies when you want to download 1 specific Envelope Document",
       "meta": {
         "type": "Text"
-      },
-      "info": "Only applies when you want to download 1 specific Envelope Document",
-      "name": "documentId"
+      }
     },
     {
       "name": "model",
@@ -124,7 +124,7 @@
       },
       "info": "Contains the reference to the file which can be saved by assigning it to the corresponding file property",
       "configuration": {
-        "placeholder": "DocusignFile"
+        "placeholder": "downloaded_envelope"
       }
     }
   ],
