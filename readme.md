@@ -7,8 +7,8 @@
 - [DocuSign Blocks](#docusign-blocks)
   - [Table of Contents](#table-of-contents)
   - [Functions](#functions)
-  - [Prerequisites](#prerequisites)
   - [Getting Started](#getting-started)
+    - [Prerequisites](#prerequisites)
     - [Data Model](#data-model)
       - [WebUser](#webuser)
       - [DocuSign Tokens](#docusign-tokens)
@@ -29,18 +29,14 @@ These blocks are used to communicate with the DocuSign API.
 - [Create Sign Request](./functions/docusign-create-sign-request/readme.md): Create a sign request for the provided collection signers.
 - [Download Envelope](./functions/docusign-download-envelope/readme.md): Download (signed) documents for an envelope (sign request)
 
-## Prerequisites
+## Getting Started
+
+### Prerequisites
 
 - [DocuSign Developer Account](https://developers.docusign.com/)
 - [Configured an app in DocuSign Developer Dashboard](https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=pmp1583277397015.html&_LANG=enus)
 - (Optional): [Raise Error Block](https://my.bettyblocks.com/block-store/ed82e4de-9248-4bb7-8791-d2cad09369b2)
 - (Optional): [Sub Action Block](https://my.bettyblocks.com/block-store/a390d91f-f284-4134-b854-38312e8297ff)
-
-## Getting Started
-
-Before proceeding, ensure you have completed the [Data Model](#data-model) and [Roles & Permissions](#roles-permissions) setup.
-
-This documentation assumes these configurations are in place and refers to them throughout.
 
 ### Data Model
 
