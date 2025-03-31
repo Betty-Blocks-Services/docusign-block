@@ -1,11 +1,14 @@
 # DocuSign Blocks
 
+## Table of Contents
+
 <!--toc:start-->
 
 - [DocuSign Blocks](#docusign-blocks)
+  - [Table of Contents](#table-of-contents)
   - [Functions](#functions)
   - [Prerequisites](#prerequisites)
-  - [Application Configuration](#application-configuration) - [Data Model](#data-model) - [Configurations](#configurations)
+  - [Getting Started](#getting-started) - [Data Model](#data-model) - [WebUser](#webuser) - [DocuSign Tokens](#docusign-tokens) - [Document](#document) - [Roles & Permissions](#roles-permissions) - [DocuSign Tokens (required)](#docusign-tokens-required) - [Configurations](#configurations)
   <!--toc:end-->
 
 These blocks are used to communicate with the DocuSign API.
@@ -24,12 +27,12 @@ These blocks are used to communicate with the DocuSign API.
 - (Optional): [Raise Error Block](https://my.bettyblocks.com/block-store/ed82e4de-9248-4bb7-8791-d2cad09369b2)
 - (Optional): [Sub Action Block](https://my.bettyblocks.com/block-store/a390d91f-f284-4134-b854-38312e8297ff)
 
-## Application Configuration
+## Getting Started
 
 > [!IMPORTANT]
-> Please make sure to follow the instructions for setting up the **Data Model** and **Roles & Permission**
+> Before proceeding, ensure you have completed the Data Model and Roles & Permissions setup.
 >
-> This documentation makes various references to data models, configurations, etc..
+> This documentation assumes these configurations are in place and refers to them throughout.
 
 ### Data Model
 
@@ -147,4 +150,4 @@ Summary: Create a configuration set in your application to use with the steps.
 >
 > 1. These are example values and should not be used as is.
 > 2. These configurations must be configured correctly when you are going live
->    and DocuSign also requires a [Go-Live Review](https://developers.docusign.com/platform/go-live/)
+> 3. DocuSign requires a [Go-Live Review](https://developers.docusign.com/platform/go-live/)

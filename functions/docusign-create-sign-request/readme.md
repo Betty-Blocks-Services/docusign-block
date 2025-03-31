@@ -120,7 +120,7 @@ Find it [here](../../templates/docusign_template.docx)
 
 ### Callback URL
 
-If you want to receive update's on when the user has signed the document, you must provide a callback URL.
+To receive update's on when the user has signed the document, you must provide a callback URL.
 
 #### Setting up a Callback Endpoint
 
@@ -145,7 +145,24 @@ If you want to receive update's on when the user has signed the document, you mu
 
 5. Add a new `Action Variable` named `status`, make it a `Number` and set the default value to `200`.
 
-6. Parse the request however you like with `JSONPath`.
+6. Insert a condition to check.
+
+7. Check if the variable `request` exists in the first path.
+
+8. Insert the `JSONPath` step in the first path of the condition.
+
+9. Configure the `JSONPath`:
+   | OPTION | VALUE |
+   |--------------- | --------------- |
+   | DATA | `request` |
+   | METHOD | Value |
+   | JSONPATH | body |
+   | SCHEMA MODEL | (optional but recommended) |
+   | RESULT | request_body |
+
+10. Insert a condition and check if `request_body` exists.
+
+11. If the `request_body` exists, you can create a new `Envelope`-record and store the desired values from the request_body.
 
 > [!TIP]
 > Check this [example JSON](./callback_response_example.json) for each available key in the callback request
@@ -153,10 +170,10 @@ If you want to receive update's on when the user has signed the document, you mu
 > Create a `Schema Model` with the desired properties and assign this Schema Model in the JSONPath
 > ![JSONPath with Schema Model](../../public/json_path_callback_schema_model.jpg)
 
-7. Insert `Format Endpoint Result` at the end of your step.
+12. Insert `Format Endpoint Result` at the end of your step.
 
-8. Configure `BODY` to the action variable `body` and the `STATUS CODE` to the action variable `status`.
+13. Configure `BODY` to the action variable `body` and the `STATUS CODE` to the action variable `status`.
 
-9. Define `RESULT` as `result`.
+14. Define `RESULT` as `result`.
 
-10. Select the `Finish`-step and choose `result` as the `OUTPUT VARIABLE`
+15. Select the `Finish`-step and choose `result` as the `OUTPUT VARIABLE`
