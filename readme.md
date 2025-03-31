@@ -8,8 +8,15 @@
   - [Table of Contents](#table-of-contents)
   - [Functions](#functions)
   - [Prerequisites](#prerequisites)
-  - [Getting Started](#getting-started) - [Data Model](#data-model) - [WebUser](#webuser) - [DocuSign Tokens](#docusign-tokens) - [Document](#document) - [Roles & Permissions](#roles-permissions) - [DocuSign Tokens (required)](#docusign-tokens-required) - [Configurations](#configurations)
-  <!--toc:end-->
+  - [Getting Started](#getting-started)
+    - [Data Model](#data-model)
+      - [WebUser](#webuser)
+      - [DocuSign Tokens](#docusign-tokens)
+      - [Document](#document)
+    - [Roles & Permissions](#roles-permissions)
+      - [DocuSign Tokens (required)](#docusign-tokens-required)
+    - [Configurations](#configurations)
+    <!--toc:end-->
 
 These blocks are used to communicate with the DocuSign API.
 

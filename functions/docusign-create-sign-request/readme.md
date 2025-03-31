@@ -177,3 +177,5 @@ To receive update's on when the user has signed the document, you must provide a
 14. Define `RESULT` as `result`.
 
 15. Select the `Finish`-step and choose `result` as the `OUTPUT VARIABLE`
+
+![Example Sign Request Callback](../../public/example_sign_request_callback.jpg)
