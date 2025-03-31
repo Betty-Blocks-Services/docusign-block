@@ -15,23 +15,6 @@ Used to get an access token for the DocuSign API from the DocuSign Callback.
 > [!NOTE]
 > To obtain an access code, please follow the instructions for implementing [docusign-get-authentication-url](../../docusign-get-authentication-url/readme.md)
 
-## Options
-
-| label                                        | info                                                                                                                                                                                                                         |
-| :------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Token Url                                    | DocuSign Token URL (See: [more info](https://developers.docusign.com/docs/web-forms-api/web-forms-101/endpoint-base-path))                                                                                                   |
-| DocuSign Integration Key                     | This key can be found in your DocuSign developer dashboard at Apps & Keys (See: [more info](https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=pmp1583277397015.html&_LANG=enus)) |
-| DocuSign Integration Secret                  | The integration secret for your app (See: [more info](https://support.docusign.com/s/document-item?language=en_US&bundleId=pik1583277475390&topicId=lzz1583277395470.html&_LANG=enus))                                       |
-| Scopes                                       | Please provide a comma sepparated list of authentication scopes (See: [more info](https://developers.docusign.com/platform/auth/reference/scopes/))                                                                          |
-| Headers                                      | Sometimes you may need to pass some additional information in your request, this is possible by adding variables in your header.                                                                                             |
-| Body Parameters, e.g. grant_type & assertion | Body parameters as key-value pairs. You'd atleast need a 'grant_type', and depending on the desired flow, an 'assertion' to enter the JWT.                                                                                   |
-| Access Token as                              | The name of the variable that will contain the resulting access token                                                                                                                                                        |
-| Refresh Token as                             | The name of the variable that will contain the resulting refresh token                                                                                                                                                       |
-| Expires at date                              | The name of the variable that will contain the resulting token expiry date (ISO-8601 format)                                                                                                                                 |
-| Token type as                                | The name of the variable that will contain the resulting token type (optional)                                                                                                                                               |
-| Scope name as                                | The name of the variable that will contain the resulting scope (optional)                                                                                                                                                    |
-| Debug logging                                | Enable to turn on debug logging for this step                                                                                                                                                                                |
-
 ## How to use
 
 ### 1. Page Setup

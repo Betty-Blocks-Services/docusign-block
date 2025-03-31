@@ -27,7 +27,7 @@ These blocks are used to communicate with the DocuSign API.
 - [Get Access Token](./functions/docusign-get-access-token/readme.md): Parse the provided Access code and use it to gain an Access Token.
 - [Refresh Access Token](./functions/docusign-refresh-access-token/readme.md): Validate a given access token and refresh it if needed.
 - [Create Sign Request](./functions/docusign-create-sign-request/readme.md): Create a sign request for the provided collection signers.
-- [Download Envelope]: Download (signed) documents for an envelope (sign request)
+- [Download Envelope](./functions/docusign-download-envelope/readme.md): Download (signed) documents for an envelope (sign request)
 
 ## Prerequisites
 
@@ -38,12 +38,14 @@ These blocks are used to communicate with the DocuSign API.
 
 ## Getting Started
 
-> [!IMPORTANT]
-> Before proceeding, ensure you have completed the [Data Model](#data-model) and [Roles & Permissions](#roles-permissions) setup.
->
-> This documentation assumes these configurations are in place and refers to them throughout.
+Before proceeding, ensure you have completed the [Data Model](#data-model) and [Roles & Permissions](#roles-permissions) setup.
+
+This documentation assumes these configurations are in place and refers to them throughout.
 
 ### Data Model
+
+Please make sure to setup the following data models.
+This setup serves as an example starting point to work with the DocuSign steps.
 
 #### WebUser
 
@@ -70,11 +72,6 @@ The `WebUser` model will be required to store the user's DocuSign tokens and nee
 | Expires at    | Text (single line) |
 | WebUser       | Belongs To         |
 
-> [!NOTE]
-> You can optionally add the `Scopes: text (single line)` property to store the scopes for each user individually.
->
-> This setup mainly focusses on using the same scopes for every user.
-
 #### Document
 
 Will be used to store the document's to sign.
@@ -97,7 +94,7 @@ Will be used to store the document's to sign.
 
 2. Search for `DocuSign Tokens`.
 
-3. Click on the green checkmark in the `READ`-column and choose `Use filter`.
+3. Click on the green check mark in the `READ`-column and choose `Use filter`.
 
 4. Configure the filter and click `Apply` and `Save`:
 

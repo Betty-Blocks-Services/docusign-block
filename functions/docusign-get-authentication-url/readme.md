@@ -6,20 +6,6 @@ Used to generate an authentication URL based on the provided options.
 
 - You have configured you [Application Configuration](../../readme.md#application-configuration).
 
-## Options
-
-| Name                     | Description                                                                                                                                              |
-| :----------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Authentication method    | The authentication strategy to use ([Learn more](https://developers.docusign.com/platform/auth/))                                                        |
-| Authorization Url        | The DocuSign Authorization URL configuration ([Learn more](https://developers.docusign.com/platform/auth/confidential-authcode-get-token/))              |
-| Scope                    | The authentication scope ([Learn more](https://developers.docusign.com/platform/auth/reference/scopes/))                                                 |
-| Integration Key          | Your Integration Key can be found in your Developer Dashboard at Docusign: https://apps-d.docusign.com/admin/apps-and-keys                               |
-| Redirect URI             | The redirect URL which you have specified for your application in DocuSign: https://apps-d.docusign.com/admin/apps-and-keys                              |
-| State                    | An optional state value that you can use to prevent CSRF and replay attacks (See more: https://auth0.com/docs/secure/attack-protection/state-parameters) |
-| Login Hint               | An optional login_hint that enables you to prepopulate the email address field on the sign-in screen.                                                    |
-| Result                   | The authentication URL to redirect the user to                                                                                                           |
-| Debug Logging (advanced) | Turn on debug logging                                                                                                                                    |
-
 ## How to use
 
 ### Page Setup (Example)

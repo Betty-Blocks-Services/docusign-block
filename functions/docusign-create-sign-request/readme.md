@@ -6,7 +6,7 @@ This step returns the `UUID` of the envelope that is created.
 ## Prerequisites
 
 - You have obtained an `Access Token` with [DocuSign - Get Access Token](../docusign-get-access-token/readme.md).
-- You have created the necessary models in [DocuSign > Application Configuration > Data Models](../../readme.md#application-configuration#data-models)
+- You have created the necessary models in [DocuSign > Getting Started > Data Models](../../readme.mddata-model)
 - You have uploaded a document to the `Document` model
 
 ## How to use
