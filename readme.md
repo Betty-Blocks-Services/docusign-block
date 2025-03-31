@@ -40,12 +40,11 @@ These blocks are used to communicate with the DocuSign API.
 
 ### Data Model
 
-Please make sure to setup the following data models.
 This setup serves as an example starting point to work with the DocuSign steps.
 
 #### WebUser
 
-The `WebUser` model will be required to store the user's DocuSign tokens and needs the following properties:
+This model is required to link the user's DocuSign tokens and needs the following properties:
 
 | PROPERTY | TYPE         |
 | -------- | ------------ |
@@ -55,7 +54,7 @@ The `WebUser` model will be required to store the user's DocuSign tokens and nee
 #### DocuSign Tokens
 
 > [!IMPORTANT]
-> It is **VERY IMPORTANT** to create a **separate** model for storing DocuSign tokens, rather than saving them directly on the `WebUser`.
+> Create a **separate** model for storing DocuSign tokens, rather than saving them directly on the `WebUser`.
 >
 > This separation enables you to configure `READ` permissions so that **only the `WebUser` who owns the `DocuSign Tokens` record** can access its data.
 >

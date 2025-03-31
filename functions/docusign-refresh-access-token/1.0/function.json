@@ -3,7 +3,7 @@
   "label": "DocuSign - Refresh Access Token",
   "category": "DocuSign",
   "icon": {
-    "name": "KeyIcon",
+    "name": "ArrowsClockwiseIcon",
     "color": "Blue"
   },
   "options": [

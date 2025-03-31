@@ -3,7 +3,7 @@
   "label": "DocuSign - Get Authentication URL",
   "category": "DocuSign",
   "icon": {
-    "name": "ActionsIcon",
+    "name": "LockOpenIcon",
     "color": "Orange"
   },
   "options": [

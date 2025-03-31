@@ -1,0 +1,11 @@
+{
+  "dependencies": [],
+  "functions": [
+    "docusignRefreshAccessToken 1.0",
+    "docusignGetAuthenticationUrl 1.0",
+    "docusignGetAccessToken 1.0",
+    "docusignDownloadEnvelope 1.0",
+    "docusignCreateSignRequest 1.0"
+  ],
+  "includes": []
+}
