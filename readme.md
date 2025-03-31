@@ -16,7 +16,8 @@
     - [Roles & Permissions](#roles-permissions)
       - [DocuSign Tokens (required)](#docusign-tokens-required)
     - [Configurations](#configurations)
-    <!--toc:end-->
+
+<!--toc:end-->
 
 These blocks are used to communicate with the DocuSign API.
 
@@ -26,6 +27,7 @@ These blocks are used to communicate with the DocuSign API.
 - [Get Access Token](./functions/docusign-get-access-token/readme.md): Parse the provided Access code and use it to gain an Access Token.
 - [Refresh Access Token](./functions/docusign-refresh-access-token/readme.md): Validate a given access token and refresh it if needed.
 - [Create Sign Request](./functions/docusign-create-sign-request/readme.md): Create a sign request for the provided collection signers.
+- [Download Envelope]: Download (signed) documents for an envelope (sign request)
 
 ## Prerequisites
 
@@ -37,7 +39,7 @@ These blocks are used to communicate with the DocuSign API.
 ## Getting Started
 
 > [!IMPORTANT]
-> Before proceeding, ensure you have completed the Data Model and Roles & Permissions setup.
+> Before proceeding, ensure you have completed the [Data Model](#data-model) and [Roles & Permissions](#roles-permissions) setup.
 >
 > This documentation assumes these configurations are in place and refers to them throughout.
 
@@ -45,12 +47,12 @@ These blocks are used to communicate with the DocuSign API.
 
 #### WebUser
 
-The `WebUser` model will be required to store the user's DocuSign tokens.
+The `WebUser` model will be required to store the user's DocuSign tokens and needs the following properties:
 
-1. Create a new model named `WebUser` if it does not exist yet.
-
-> [!TIP]
-> You can use the Page template `User, account login and register` to automatically create the `WebUser` model.
+| PROPERTY | TYPE         |
+| -------- | ------------ |
+| Email    | Email / Text |
+| Password | Password     |
 
 #### DocuSign Tokens
 
@@ -61,43 +63,26 @@ The `WebUser` model will be required to store the user's DocuSign tokens.
 >
 > Doing so significantly reduces the risk of token theft.
 
-1. Create a new model named `DocuSign Tokens`.
-
-2. Use the `Quick Add Properties`-button to add the following properties:
-
-   | Name          | Type               |
-   | ------------- | ------------------ |
-   | Access Token  | Text (multi line)  |
-   | Refresh Token | Text (multi line)  |
-   | Expires at    | Text (single line) |
+| Name          | Type               |
+| ------------- | ------------------ |
+| Access Token  | Text (multi line)  |
+| Refresh Token | Text (multi line)  |
+| Expires at    | Text (single line) |
+| WebUser       | Belongs To         |
 
 > [!NOTE]
 > You can optionally add the `Scopes: text (single line)` property to store the scopes for each user individually.
 >
 > This setup mainly focusses on using the same scopes for every user.
 
-3. Open the `Relations`-tab for the `DocuSign Tokens`-model.
-
-4. Create a new `Belongs To` relation with the `WebUser` and save.
-   ![DocuSign Tokens > belongs to > WebUser](./public/docusign_tokens_belong_to_webuser.jpg)
-
 #### Document
 
 Will be used to store the document's to sign.
 
-Having a separate model to store your files is generally a good practice to keep your database structured.
-You can optionally add a `List` property to indicate the type of file.
-
-This also enables you to easily link multiple documents to a single record.
-
-1. Create a new model named `Document`.
-
-2. Add a `File` property and name it `File`.
-
-3. Set the file types to `.docx` and `.pdf` and click `Save`.
-
-> [!NOTE]
-> These are the file types supported by DocuSign.
+| PROPERTY | TYPE               |
+| -------- | ------------------ |
+| File     | File (.docx, .pdf) |
+| Type     | List (Envelope)    |
 
 ### Roles & Permissions
 
@@ -108,7 +93,7 @@ This also enables you to easily link multiple documents to a single record.
 
 #### DocuSign Tokens (required)
 
-1. Choose on of the roles in your application.
+1. Choose one of the roles in your application.
 
 2. Search for `DocuSign Tokens`.
 
@@ -128,19 +113,6 @@ This also enables you to easily link multiple documents to a single record.
 ### Configurations
 
 Summary: Create a configuration set in your application to use with the steps.
-
-1. Open you development sandbox.
-
-2. Click on the `Tools`-icon in the bottom-left corner.
-
-3. Click on `Configurations`:
-   ![Tools > Configurations](path)
-
-4. Click on `New Configuration`.
-
-5. Name it `DocuSign`.
-
-6. Configure the values according to the following table:
 
 | Name                                                                                        | Value                                                           |
 | ------------------------------------------------------------------------------------------- | --------------------------------------------------------------- |
